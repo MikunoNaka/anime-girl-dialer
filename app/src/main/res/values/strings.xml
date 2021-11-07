@@ -11,4 +11,8 @@
     <string name="num_7">7</string>
     <string name="num_8">8</string>
     <string name="num_9">9</string>
+    <string name="num_star">*</string>
+    <string name="num_hashtag">#</string>
+    <string name="call_button_desc">Call Button</string>
+    <string name="backspace_button_desc">Delete Text</string>
 </resources>

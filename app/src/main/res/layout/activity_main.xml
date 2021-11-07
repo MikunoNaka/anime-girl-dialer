@@ -6,79 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/num_1"
-        style="@style/ButtonStyle"
-        android:text="@string/num_1"
-        app:layout_constraintBottom_toTopOf="@+id/num_4"
-        app:layout_constraintEnd_toEndOf="@+id/num_4"
-        app:layout_constraintStart_toStartOf="@+id/num_4" />
-
-    <Button
-        android:id="@+id/num_2"
-        style="@style/ButtonStyle"
-        android:text="@string/num_2"
-        app:layout_constraintBottom_toTopOf="@+id/num_5"
-        app:layout_constraintEnd_toEndOf="@+id/num_5"
-        app:layout_constraintStart_toStartOf="@+id/num_5" />
-
-    <Button
-        android:id="@+id/num_3"
-        style="@style/ButtonStyle"
-        android:text="@string/num_3"
-        app:iconPadding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/num_6"
-        app:layout_constraintEnd_toEndOf="@+id/num_6"
-        app:layout_constraintStart_toStartOf="@+id/num_6" />
-
-    <Button
-        android:id="@+id/num_4"
-        style="@style/ButtonStyle"
-        android:text="@string/num_4"
-        app:layout_constraintBottom_toBottomOf="@+id/num_5"
-        app:layout_constraintEnd_toStartOf="@+id/num_5"
-        app:layout_constraintTop_toTopOf="@+id/num_5" />
-
-    <Button
-        android:id="@+id/num_5"
-        style="@style/ButtonStyle"
-        android:text="@string/num_5"
+    <fragment
+        android:id="@+id/numpad_fragment_view"
+        android:name="org.mikunonaka.animegirldialer.Numpad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/num_6"
-        style="@style/ButtonStyle"
-        android:text="@string/num_6"
-        app:layout_constraintBottom_toBottomOf="@+id/num_5"
-        app:layout_constraintStart_toEndOf="@+id/num_5"
-        app:layout_constraintTop_toTopOf="@+id/num_5" />
-
-    <Button
-        android:id="@+id/num_7"
-        style="@style/ButtonStyle"
-        android:text="@string/num_7"
-        app:layout_constraintEnd_toEndOf="@+id/num_4"
-        app:layout_constraintStart_toStartOf="@+id/num_4"
-        app:layout_constraintTop_toBottomOf="@+id/num_4" />
-
-    <Button
-        android:id="@+id/num_8"
-        style="@style/ButtonStyle"
-        android:text="@string/num_8"
-        app:layout_constraintEnd_toEndOf="@+id/num_5"
-        app:layout_constraintStart_toStartOf="@+id/num_5"
-        app:layout_constraintTop_toBottomOf="@+id/num_5" />
-
-    <Button
-        android:id="@+id/num_9"
-        style="@style/ButtonStyle"
-        android:text="@string/num_9"
-        app:layout_constraintEnd_toEndOf="@+id/num_6"
-        app:layout_constraintStart_toStartOf="@+id/num_6"
-        app:layout_constraintTop_toBottomOf="@+id/num_6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,13 +3,39 @@
     <style name="ButtonStyle">
         <item name="android:colorBackground">@color/num_fg</item>
         <item name="android:textSize">32sp</item>
-        <item name="android:layout_height">100dp</item>
-        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">70sp</item>
+        <item name="android:layout_width">70sp</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:background">@drawable/rounded_button</item>
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:layout_marginBottom">10dp</item>
-        <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:background">@drawable/rounded_numpad_button</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">5sp</item>
+        <item name="android:layout_marginLeft">26sp</item>
+        <item name="android:layout_marginRight">26sp</item>
+    </style>
+
+    <style name="CallButtonStyle">
+        <item name="android:colorBackground">@color/call_button_fg</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:layout_height">70sp</item>
+        <item name="android:layout_width">70sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/rounded_call_button</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">5sp</item>
+        <item name="android:layout_marginLeft">26sp</item>
+        <item name="android:layout_marginRight">26sp</item>
+    </style>
+
+    <style name="BackspaceButtonStyle">
+        <item name="android:colorBackground">@color/call_button_fg</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:layout_height">70sp</item>
+        <item name="android:layout_width">70sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">@drawable/rounded_backspace_button</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">5sp</item>
+        <item name="android:layout_marginLeft">26sp</item>
+        <item name="android:layout_marginRight">26sp</item>
     </style>
 </resources>
