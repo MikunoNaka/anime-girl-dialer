@@ -6,6 +6,9 @@
     android:layout_height="wrap_content"
     tools:context=".Numpad">
 
+    <!--RelativeLayout
+        android:layout_width=""
+        android:layout_height=""
     <EditText
         android:id="@+id/phone_input"
         android:layout_width="0dp"
@@ -15,9 +18,37 @@
         android:layout_alignRight="@+id/numpad"
         android:ems="10"
         android:inputType="phone" />
+        style="@style/BackspaceButtonStyle"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/phone_input_container"
+        android:layout_alignStart="@+id/numpad"
+        android:layout_alignEnd="@+id/numpad">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/phone_input"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:hint="@string/phone_input_placeholder"
+            android:inputType="phone" />
+
+        <ImageButton
+            android:id="@+id/phone_input_backspace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_input_delete"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/backspace_button_desc" />
+
+    </RelativeLayout>
 
     <GridLayout
-        android:layout_below="@+id/phone_input"
+        android:layout_below="@+id/phone_input_container"
         android:id="@+id/numpad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,13 +123,6 @@
             android:contentDescription="@string/call_button_desc"
             app:srcCompat="@android:drawable/ic_menu_call"
             tools:ignore="RedundantDescriptionCheck" />
-
-        <ImageButton
-            android:id="@+id/backspace_button"
-            android:layout_column="2"
-            style="@style/BackspaceButtonStyle"
-            android:contentDescription="@string/backspace_button_desc"
-            android:src="@android:drawable/ic_input_delete" />
 
     </GridLayout>
 

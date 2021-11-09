@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -20,12 +22,12 @@ public class Numpad extends Fragment implements View.OnClickListener, View.OnLon
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_numpad, container, false);
+        phoneInput = view.findViewById(R.id.phone_input);
 
         // suppress soft keyboard
-        phoneInput = view.findViewById(R.id.phone_input);
         phoneInput.setShowSoftInputOnFocus(false);
 
-        Button[] num_buttons = {
+        Button[] numButtons = {
                 view.findViewById(R.id.num_0),
                 view.findViewById(R.id.num_1),
                 view.findViewById(R.id.num_2),
@@ -40,17 +42,26 @@ public class Numpad extends Fragment implements View.OnClickListener, View.OnLon
                 view.findViewById(R.id.num_hashtag),
         };
 
-        for (Button btn : num_buttons) {
+        ImageButton[] imageButtons = {
+                view.findViewById(R.id.call_button),
+                view.findViewById(R.id.phone_input_backspace)
+        };
+
+        for (Button btn : numButtons)
             btn.setOnClickListener(this);
-        }
+
+        for (ImageButton btn : imageButtons)
+            btn.setOnClickListener(this);
 
         view.findViewById(R.id.num_0).setOnLongClickListener(this);
 
         return view;
     }
 
+    @SuppressLint("SetTextI18n")
     void updateInputText(String currentInput, String newChar, int index) {
         phoneInput.setText(currentInput.substring(0, index) + newChar + currentInput.substring(index));
+        phoneInput.setSelection(index + 1);
     }
 
     @Override
@@ -58,7 +69,6 @@ public class Numpad extends Fragment implements View.OnClickListener, View.OnLon
         if (view.getId() == R.id.num_0) {
             int selectionEnd = phoneInput.getSelectionEnd();
             updateInputText(phoneInput.getText().toString(), "+", selectionEnd);
-            phoneInput.setSelection(selectionEnd + 1);
         }
         return true;
     }
@@ -106,9 +116,23 @@ public class Numpad extends Fragment implements View.OnClickListener, View.OnLon
             case R.id.num_hashtag:
                 updateInputText(currentInput, "#", selectionEnd);
                 break;
+            case R.id.phone_input_backspace:
+                if (selectionEnd > 0) {
+                    String newTxt;
+                    newTxt = currentInput.replaceFirst(String.valueOf(currentInput.charAt(selectionEnd-1)), "");
+
+                    phoneInput.setText(newTxt);
+
+                    if (newTxt.length() > 0) {
+                        phoneInput.setSelection(selectionEnd - 1);
+                    }
+                }
+                break;
+            case R.id.call_button:
+                Toast.makeText(getActivity(), "Calling Coming Soon", Toast.LENGTH_LONG).show();
+                break;
             default:
                 break;
         }
-        phoneInput.setSelection(selectionEnd + 1);
     }
 }
