@@ -9,7 +9,7 @@
         <entry key="app/src/main/res/drawable/rounded_call_button.xml" value="0.3807291666666667" />
         <entry key="app/src/main/res/drawable/rounded_numpad_button.xml" value="0.3748717948717949" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_numpad.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_numpad.xml" value="0.5" />
         <entry key="app/src/main/res/layout/numpad.xml" value="0.33" />
       </map>
     </option>

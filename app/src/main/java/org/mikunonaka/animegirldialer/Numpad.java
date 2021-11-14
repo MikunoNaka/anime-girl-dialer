@@ -119,7 +119,7 @@ public class Numpad extends Fragment implements View.OnClickListener, View.OnLon
             case R.id.phone_input_backspace:
                 if (selectionEnd > 0) {
                     String newTxt;
-                    newTxt = currentInput.replaceFirst(String.valueOf(currentInput.charAt(selectionEnd-1)), "");
+                    newTxt = currentInput.replaceFirst(String.valueOf(currentInput.charAt(selectionEnd - 1)), "");
 
                     phoneInput.setText(newTxt);
 
